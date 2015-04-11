@@ -7,7 +7,7 @@
 1. Install node from https://nodejs.org/download/ and follow the instructions from there only.
 2. Download or clone this project.
 3. Navigate to the package.json file (from command line) and run "npm install" with admin rights
-4. Now run "node app.js".
+4. Now run "node www" after navigating to the www folder.
 5. Open your browser and navigate to "localhost:3000".
 
 # Input
