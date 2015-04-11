@@ -41,17 +41,20 @@ router.post('/', function (req, res, next) {
                         delete body.city.population
                         delete body.city.sys
 
+                        body.city.name= reqJson.cities[this.i]
+
+
                         //push the final data
                         forecast.push(body)
                     } else {
                         //Generate a error for that city
-                        var errObj = "Sorry,Something went wrong for " + reqJson.cities[i];
+                        var errObj ={"error": "Sorry,Something went wrong for " + reqJson.cities[this.i]};
                         forecast.push(errObj);
                     }
 
                     //If all the requests are completed and this is the last callback
                     if (count === reqJsonLength) {
-                        res.send(JSON.stringify({"result": forecast}))
+                            res.send(JSON.stringify({"result": forecast}))
                     }
                 }
             }.bind({"i": i}));
